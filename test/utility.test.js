@@ -1,24 +1,19 @@
-const moment = require("moment");
-const formatMessage = require("../utils/messages");
+const util = require("../utility/util.js");
+
 describe("Utility", () => {
-  describe("messages", () => {
-    it("Should return messages ", () => {
-      const messages = formatMessage("Michelle", "Hello");
-      expect(messages.username).toEqual("Michelle");
+  describe("Add", () => {
+    it("Should return the sum of two numbers ", () => {
+      const addition = util.maths.add(2, 2);
+
+      expect(addition).toEqual(4);
     });
   });
 
-  describe("messages", () => {
-    it("Should return messages ", () => {
-      const messages = formatMessage("Michelle", "Hello");
-      expect(messages.text).toEqual("Hello");
-    });
-  });
+  describe("Subtract", () => {
+    it("Should return the result of subtracting two numbers", () => {
+      const subtraction = util.maths.subtract(10, 3);
 
-  describe("messages", () => {
-    it("Should return messages ", () => {
-      const messages = formatMessage("Michelle", "Hello");
-      expect(messages.time).toEqual(moment().format("h:mm a"));
+      expect(subtraction).toEqual(7);
     });
   });
 });
